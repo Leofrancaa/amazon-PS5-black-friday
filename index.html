@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayStation 5 - Oferta Imperdível! 🔥</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: #000;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .troll-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        animation: fadeIn 1s ease-out;
+        max-width: 95%;
+        padding: 20px;
+      }
+
+      .troll-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        flex: 1;
+        max-width: 500px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .troll-image {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 10px 50px rgba(255, 0, 0, 0.5);
+        animation: shake 0.5s ease-in-out 1s;
+        flex: 1;
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        75% {
+          transform: translateX(10px);
+        }
+      }
+
+      .troll-text {
+        color: #ff0000;
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        animation: pulse 1.5s infinite;
+      }
+
+      .troll-subtitle {
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        animation: bounce 1s infinite;
+      }
+
+      .troll-info {
+        color: #ffcc00;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+        animation: blink 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      .emoji-rain {
+        position: fixed;
+        font-size: 50px;
+        animation: fall linear;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .troll-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .troll-text-container {
+          text-align: center;
+        }
+        .troll-text {
+          font-size: 28px;
+        }
+        .troll-subtitle {
+          font-size: 20px;
+        }
+        .troll-info {
+          font-size: 16px;
+        }
+        .troll-image {
+          max-height: 50vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="troll-container">
+      <div class="troll-text-container">
+        <div class="troll-text">🤣 SE LASCOU PANACA! 🤣</div>
+        <div class="troll-subtitle">😂 Vai chegar um pacote de BRITA! 😂</div>
+      </div>
+
+      <!-- Substitua o src abaixo pela URL da sua imagem de trolagem -->
+      <img src="image.png" alt="Troll" class="troll-image" id="trollImage" />
+    </div>
+
+    <script>
+      // Chuva de emojis automática quando a página carrega
+      window.addEventListener("load", () => {
+        createEmojiRain();
+      });
+
+      function createEmojiRain() {
+        const emojis = ["😂", "🤣", "😆", "💸", "🎮", "🤡", "📦", "🧱", "💀"];
+
+        for (let i = 0; i < 60; i++) {
+          setTimeout(() => {
+            const emoji = document.createElement("div");
+            emoji.className = "emoji-rain";
+            emoji.textContent =
+              emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.animationDuration = Math.random() * 4 + 3 + "s";
+            emoji.style.top = -50 + "px";
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 8000);
+          }, i * 150);
+        }
+
+        // Continua criando emojis infinitamente
+        setInterval(() => {
+          const emoji = document.createElement("div");
+          emoji.className = "emoji-rain";
+          emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          emoji.style.left = Math.random() * 100 + "vw";
+          emoji.style.animationDuration = Math.random() * 4 + 3 + "s";
+          emoji.style.top = -50 + "px";
+          document.body.appendChild(emoji);
+
+          setTimeout(() => emoji.remove(), 8000);
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
